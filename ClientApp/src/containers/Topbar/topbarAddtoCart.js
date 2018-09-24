@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import IntlMessages from "../../components/utility/intlMessages";
-import Scrollbar from "../../components/utility/customScrollBar";
-import Popover from "../../components/uielements/popover";
-import SingleCart from "../../components/cart/singleCartModal";
-import ecommerceAction from "../../redux/ecommerce/actions";
-import TopbarDropdownWrapper from "./topbarDropdown.style";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import IntlMessages from '../../components/utility/intlMessages';
+import Popover from '../../components/uielements/popover';
+import SingleCart from '../../components/cart/singleCartModal';
+import ecommerceAction from '../../redux/ecommerce/actions';
+import TopbarDropdownWrapper from './topbarDropdown.style';
 
 const {
   initData,
@@ -99,7 +98,7 @@ class TopbarAddtoCart extends Component {
           </h3>
         </div>
         <div className="isoDropdownBody isoCartItemsWrapper">
-          <Scrollbar style={{ height: 300 }}>{this.renderProducts()}</Scrollbar>
+          {this.renderProducts()}
         </div>
         <div className="isoDropdownFooterLinks">
           <Link to={`${url}/cart`} onClick={this.hide}>
@@ -107,7 +106,7 @@ class TopbarAddtoCart extends Component {
           </Link>
 
           <h3>
-            <IntlMessages id="topbar.totalPrice" />:{" "}
+            <IntlMessages id="topbar.totalPrice" />:{' '}
             <span>${totalPrice.toFixed(2)}</span>
           </h3>
         </div>
@@ -127,7 +126,7 @@ class TopbarAddtoCart extends Component {
             style={{ color: customizedTheme.textColor }}
           />
           {productQuantity.length === 0 ? (
-            ""
+            ''
           ) : (
             <span>{productQuantity.length}</span>
           )}
